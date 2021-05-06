@@ -25,11 +25,23 @@ public class Program2 {
 		}
 		
 		System.out.println("=== TEST 3: seller insert ===");
-		Department newDepartment = new Department(null,"Technology");
+		Department newDepartment = new Department(null,"Computers");
 		departmentDao.insert(newDepartment);
 		
 		System.out.println("Inserted! new id:  " + newDepartment.getId());
 		
+		System.out.println("=== TEST 4: seller update ===");
+		department = departmentDao.findById(1);
+		department.setName("Music");
+		departmentDao.update(department);
+		
+		System.out.println("Update completed!");
+		
+		System.out.println("=== TEST 4: seller update ===");
+		
+		departmentDao.deleteById(3);
+		
+		System.out.println("successfully deleted");
 
 	}
 
